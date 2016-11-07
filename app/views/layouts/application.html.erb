@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TaxiApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="nav-bar">
+      <ul class="menu-list">
+        <li><%= link_to 'Drivers', drivers_path, class: "menu-item" %></li>
+        <li><%= link_to 'Booking', customers_path, class: "menu-item"%></li>
+        <%if current_user %>
+          <li><%= link_to "Log out", sessions_path, method: 'destroy', class: "menu-item" %></li>
+        <%else %>
+            <li><%= link_to 'Register', new_user_path, class: "menu-item" %></li>
+            <li><%= link_to 'Login', login_path, class: "menu-item" %></li>
+        <%end %>
+        <!-- Put this at the left hand side, make sure it comes last in the ul and leave out
+           the menu-item class (which floats to the right) -->
+        <li><%= image_tag("taxi_icon_2.png", class: "img_small") %></li>
+      </ul>
+      <div class="notice">
+        <span id="notice"><%= notice %></span>
+      </div>
+    </div>
+
+    <%= yield %>
+  </body>
+</html>
