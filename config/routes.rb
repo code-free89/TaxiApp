@@ -1,16 +1,13 @@
 Rails.application.routes.draw do
 
-  resources :drivers, :customers, :users, :sessions
-
-  # get 'users/login' => users#login
-  # get 'logout' => 'users#logout'
-
-  # Routes for login / logout
-  get  '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  get  '/logout' => 'sessions#destroy'
+  devise_for :users, controllers: { sessions: 'users/sessions', :registrations => "users/registrations" }
+  resources :drivers, :users
 
   get '/edit' => 'drivers#editall'
+
+  devise_scope :user do
+    get 'users/sign_out' => "devise/sessions#destroy"
+  end
 
   root 'dashboard#show'
 

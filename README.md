@@ -1,5 +1,9 @@
 # README
 
-TaxiApp with bcrypt user technology.
-No longer under active development, but I've left it here because I did (eventually) get bcrypt working.
+TaxiApp with carrierwave for picture uploads, and devise for security.
+
+TODO
+* Validate email / phone number / postcode fields
+* Make some parameters mandatory
+
 

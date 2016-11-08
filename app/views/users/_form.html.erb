@@ -1,0 +1,76 @@
+
+<div class="section">
+
+  <%= form_for(user) do |f| %>
+
+    <p>
+      <table>
+        <tr>
+          <th>About me</th>
+          <th>Address</th>
+        </tr>
+        <tr>
+          <td><%= f.label "Last name".to_sym %><br>
+          <%= f.text_field :lname, class: "textfield" %>
+          </td>
+          <td>
+          <%= f.label :line_1 %><br>
+          <%= f.text_field :addr1, class: "textfield" %>
+          </td>
+        </tr>
+        <tr>
+          <td><%= f.label "First name".to_sym %><br>
+          <%= f.text_field :fname, class: "textfield" %>
+          </td>
+          <td>
+          <%= f.label :line_2 %><br>
+          <%= f.text_field :addr2, class: "textfield" %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+          <%= f.label "Mobile number".to_sym %><br>
+          <%= f.text_field :phnum, class: "textfield" %>
+          </td>
+          <td>
+          <%= f.label :town %><br>
+          <%= f.text_field :town, class: "textfield" %>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp</td>
+          <td>
+          <%= f.label :postcode %><br>
+          <%= f.text_field :postcode, class: "textfield" %>
+          </td>
+        <tr>
+          <td>
+          <%= f.label :picture %><br>
+          <%= f.file_field :avatar, class: "fileinput" %>
+          </td>
+          <td>
+          <%= f.label :county %><br>
+          <%= f.text_field :county, class: "textfield" %>
+          </td>
+        </tr>
+      </table>
+    </p>
+
+    <% if user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(user.errors.count, "error") %> errors, unable to save profile:</h2>
+
+        <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit 'Save', class: "brand-button" %>
+    </div>
+  <% end %>
+
+</div>

@@ -14,12 +14,12 @@
         </tr>
         <tr>
           <% @drivers.each do |driver| %>
-            <td><%= driver.fname %> <%= driver.lname %></td>
+            <td class="middle"><%= driver.fname %> <%= driver.lname %></td>
           <% end %>
         </tr>
         <tr>
           <% @drivers.each do |driver| %>
-            <td><%= driver.reg %></td>
+            <td class="middle"><%= driver.reg %></td>
           <% end %>
         </tr>
 
@@ -27,7 +27,9 @@
     </table>
 
     <br/>
-    <%= link_to 'Edit Drivers', '/edit', class: "brand-button" %>
+    <% if current_user.admin? %>
+      <%= link_to 'Edit Drivers', '/edit', class: "brand-button" %>
+    <% end %>
 
 
   </div>

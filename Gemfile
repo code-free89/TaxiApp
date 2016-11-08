@@ -34,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # Add libraries for app to use
 gem 'carrierwave'
 gem 'font-awesome-rails'
-gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'devise'
 # =======================================
 
 group :development, :test do
