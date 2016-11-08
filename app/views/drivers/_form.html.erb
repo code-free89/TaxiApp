@@ -4,16 +4,16 @@
   <%= form_for(driver) do |f| %>
 
     <p>
-      <%= f.label :lastname %><br>
+      <%= f.label "Last name".to_sym %><br>
       <%= f.text_field :lname %>
       <br/>
-      <%= f.label :firstname %><br>
+      <%= f.label "First name".to_sym %><br>
       <%= f.text_field :fname %>
       <br/>
-      <%= f.label :reg %><br>
+      <%= f.label :registration %><br>
       <%= f.text_field :reg %>
       <br />
-      <%= f.label :pic %><br>
+      <%= f.label :picture %><br>
       <%= f.file_field :avatar %>
     </p>
 

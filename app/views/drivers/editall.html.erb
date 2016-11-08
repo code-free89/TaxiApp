@@ -1,0 +1,40 @@
+<div class="main">
+  <div class="section">
+    <h1>Drivers (editable view)</h1>
+  </div>
+  <div class="section">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Driver picture</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Registration</th>
+          <th>View</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @drivers.each do |driver| %>
+          <tr>
+            <td><%= image_tag(driver.avatar) %></td>
+            <td><%= driver.lname %></td>
+            <td><%= driver.fname %></td>
+            <td><%= driver.reg %></td>
+            <td><%= link_to 'Show', driver %></td>
+            <td><%= link_to 'Edit', edit_driver_path(driver) %></td>
+            <td><%= link_to 'Destroy', driver, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Driver', new_driver_path %>
+
+  </div>
+</div>

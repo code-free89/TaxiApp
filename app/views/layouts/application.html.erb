@@ -14,7 +14,7 @@
         <li><%= link_to 'Drivers', drivers_path, class: "menu-item" %></li>
         <li><%= link_to 'Booking', customers_path, class: "menu-item"%></li>
         <%if current_user %>
-          <li><%= link_to "Log out", sessions_path, method: 'destroy', class: "menu-item" %></li>
+          <li><%= link_to "Log out", logout_path, class: "menu-item" %></li>
         <%else %>
             <li><%= link_to 'Register', new_user_path, class: "menu-item" %></li>
             <li><%= link_to 'Login', login_path, class: "menu-item" %></li>

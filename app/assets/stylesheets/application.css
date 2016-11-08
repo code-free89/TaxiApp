@@ -24,12 +24,6 @@ body {
     margin:         0 auto;
 }
 
-table {
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-}
-
 .overlay {
     position:    absolute;
     width:       100%;
@@ -38,6 +32,15 @@ table {
 
 a {
     text-decoration: none;
+}
+
+.brand-button {
+    background-color: #ECECEC;
+    color:            #7f7f7f;
+    border-style:     solid;
+    border-width:     1px;
+    border-radius:    15px;
+    padding:          5px;
 }
 
 .nav-bar {
