@@ -23,7 +23,6 @@
 .DS_Store
 .idea
 Rakefile
-bin/
 log/
 test/
 tmp/
