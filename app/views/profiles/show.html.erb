@@ -1,0 +1,40 @@
+<div class="section">
+
+  <h1><%= @profile && @profile.fname ? @profile.fname : "My profile" %>
+      <% if current_user.admin? %>  (Admin) <% end %>
+  </h1>
+
+
+  <table>
+    <tr>
+      <th>About me</th>
+      <th>Address</th>
+    </tr>
+
+    <tr>
+      <td><%= @profile.lname %></td>
+      <td><%= @profile.addr1%></td>
+    </tr>
+    <tr>
+      <td><%= @profile.fname%></td>
+      <td><%= @profile.addr2%></td>
+    </tr>
+    <tr>
+      <td><%= @profile.phnum%></td>
+      <td><%= @profile.town%></td>
+    </tr>
+    <tr>
+      <td>&nbsp</td>
+      <td><%= @profile.postcode %></td>
+    <tr>
+      <td><%= image_tag(@profile.avatar) %></td>
+      <td><%= @profile.county %></td>
+    </tr>
+  </table>
+
+</div>
+
+<div class="section">
+
+  <%= link_to 'Edit', edit_profile_path %>
+</div>

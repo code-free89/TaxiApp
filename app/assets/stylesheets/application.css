@@ -31,22 +31,6 @@ body {
     color:       white;
 }
 
-a {
-    text-decoration: none;
-}
-
-.brand-button {
-    background-color: #ECECEC;
-    color:            #7f7f7f;
-    border-color:     #e5e5e5;
-    border-style:     solid;
-    border-width:     1px;
-    border-radius:    15px;
-    padding:          5px;
-    font-size:        16px;
-    min-width:        60px;
-}
-
 .nav-bar {
     background-color: #474766;
     width:            100%;
@@ -59,8 +43,13 @@ a {
     float:          right;
 }
 
+.menu-item:visited {
+    color:   white;
+}
+
 .menu-list {
     list-style-type: none;
+    line-height: 30px;
 }
 
 .left-nav {
@@ -83,12 +72,16 @@ a {
     padding:    5px;
 }
 
-h1 {
+.welcome {
     padding-left: 70px;
     padding-top:  70px;
 }
 
-.fileinput {
+a {
+    text-decoration: none;
+}
+
+.section > a {
     background-color: #ECECEC;
     color:            #7f7f7f;
     border-color:     #e5e5e5;
@@ -96,19 +89,32 @@ h1 {
     border-width:     1px;
     border-radius:    15px;
     padding:          5px;
-    margin-right:     20px;
-    font-size:        14px;
+    font-size:        16px;
+    min-width:        60px;
 }
 
-/* Not possible to override colours here, use webkit autofill instead */
-.textfield {
-    border-radius:  15px;
-    height:         20px;
-    font-size:      12px;
-    padding-left:   6px;
-    padding-right:  6px;
-    margin-bottom:  10px;
+input {
+    background-color: #ECECEC;
+    color:            #7f7f7f;
+    border-color:     #e5e5e5;
+    border-style:     solid;
+    border-width:     1px;
+    border-radius:    15px;
+    padding:          5px;
+    font-size:        16px;
+    min-width:        60px;
+}
 
+input[type="text"] {
+    font-size: 12px;
+}
+
+input[type="submit"] {
+    cursor:           pointer;
+}
+
+input[type="file"] {
+    margin-right:     20px;
 }
 
 input:-webkit-autofill {
@@ -131,4 +137,8 @@ input:-webkit-autofill {
 
 *:focus {
    outline: none;
+}
+
+a:hover {
+    background-color: inherit;
 }

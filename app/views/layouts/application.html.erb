@@ -12,12 +12,11 @@
     <div class="nav-bar">
       <div class="right-nav">
         <ul class="menu-list">
-        <li><%= link_to 'Drivers', drivers_path, class: "menu-item" %></li>
 
         <%if user_signed_in? %>
-              <li><%= link_to 'My Profile', user_path(current_user), class: "menu-item" %></li>
-
-              <li><%= link_to "Log out", destroy_user_session_path, class: "menu-item"%></li>
+              <li><%= link_to 'Drivers', drivers_path, class: "menu-item" %></li>
+              <li><%= link_to 'My Profile', profile_path, class: "menu-item" %></li>
+              <li><%= link_to "Log out " + current_user.email, destroy_user_session_path, method: 'delete', class: "menu-item"%></li>
         <%else %>
             <li><%= link_to "Log in", new_user_session_path, class: "menu-item" %><br /></li>
         <%end %>
