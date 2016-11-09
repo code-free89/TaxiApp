@@ -1,4 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="section">
 
-<%= link_to 'Edit', edit_driver_path(@driver) %> |
-<%= link_to 'Back', drivers_path %>
+  <h2>Driver</h2>
+<table>
+
+  <tr>
+     <td><%= image_tag(@driver.avatar) %></td>
+  </tr>
+  <tr>
+    <td class="middle"><%= @driver.fname %> <%= @driver.lname %></td>
+  </tr>
+  <tr>
+    <td class="middle"><%= @driver.reg %></td>
+  </tr>
+
+  </tbody>
+</table>
+</div>
+
+<div class="section">
+  <%= link_to 'Edit', edit_driver_path(@driver) %>
+</div>

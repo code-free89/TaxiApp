@@ -81,6 +81,11 @@ a {
     text-decoration: none;
 }
 
+label {
+    display: inline-block;
+    margin-top: 10px;
+}
+
 .section > a {
     background-color: #ECECEC;
     color:            #7f7f7f;
