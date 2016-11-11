@@ -1,7 +1,11 @@
 <div class="section">
-<h1>New Profile for <% current_user %></h1>
+<h1>New Profile for <%= current_user.email %></h1>
 </div>
 
 <%= render 'form', profile: @profile %>
 
-
+<div class="section">
+  <!-- If the profile doesn't exist, #show will redirect here.
+  So best we don't redirect to show, go to homepage instead -->
+  <%= link_to 'Cancel', root_url %>
+</div>

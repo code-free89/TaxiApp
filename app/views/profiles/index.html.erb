@@ -1,27 +1,34 @@
-<div class="section">
-<h1>Profiles</h1>
+<h1>All Profiles</h1>
 
-<table>
-  <thead>
+  <table>
+
+    <tbody>
     <tr>
-      <th>Lname</th>
-      <th>Fname</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <% @profiles.each do |profile| %>
+          <th><%= profile.role.camelize %></th>
+      <% end %>
     </tr>
-  </thead>
+    <tr>
+      <% @profiles.each do |profile| %>
+          <td><%= image_tag(profile.avatar) %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <% @profiles.each do |profile| %>
+          <td class="middle"><%= profile.fname %> <%= profile.lname %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <% @profiles.each do |profile| %>
+          <td><%= image_tag(profile.carpic) %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <% @profiles.each do |profile| %>
+          <td class="middle"><%= profile.reg %></td>
+      <% end %>
+    </tr>
 
-  <tbody>
-    <% @profiles.each do |profile| %>
-      <tr>
-        <td>Todo</td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
 
-<br>
-
-<%= link_to 'New Profile', new_profile_path %>
-
-</div>

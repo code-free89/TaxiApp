@@ -38,6 +38,7 @@ gem 'carrierwave'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'pg'
+gem 'cancancan'
 # =======================================
 
 group :development, :test do

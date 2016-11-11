@@ -1,0 +1,45 @@
+<div class="main">
+  <div class="section">
+    <h1>Drivers</h1>
+  </div>
+  <div class="section">
+
+
+    <table>
+
+      <tbody>
+        <tr>
+          <% @profiles.each do |profile| %>
+              <% if profile.driver? %>
+                <td><%= image_tag(profile.avatar) %></td>
+              <% end %>
+          <% end %>
+        </tr>
+        <tr>
+          <% @profiles.each do |profile| %>
+              <% if profile.driver? %>
+                <td><%= image_tag(profile.carpic) %></td>
+              <% end %>
+          <% end %>
+        </tr>
+        <tr>
+          <% @profiles.each do |profile| %>
+              <% if profile.driver? %>
+                <td class="middle"><%= profile.fname %> <%= profile.lname %>
+                </td>
+              <% end %>
+        <% end %>
+        </tr>
+        <tr>
+          <% @profiles.each do |profile| %>
+              <% if profile.driver? %>
+                <td class="middle"><%= profile.reg %> </td>
+              <% end %>
+        <% end %>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>

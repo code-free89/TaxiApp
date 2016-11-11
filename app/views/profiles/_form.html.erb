@@ -2,7 +2,12 @@
 
 <%= form_for profile, url: profile_path do |f| %>
 
-    <table>
+      <div class="field">
+        <%= f.label :Account_role %><br />
+        <%= f.select :role, User.roles.keys.to_a %>
+      </div>
+
+      <table>
       <tr>
         <th>About me</th>
         <th>Address</th>
@@ -51,6 +56,26 @@
           <%= f.text_field :county, class: "textfield" %>
         </td>
       </tr>
+
+
+      <% if profile.driver? %>
+        <tr>
+          <th>Vehicle details</th>
+          <th>&nbsp</th>
+        </tr>
+
+        <tr>
+          <td>
+            <%= f.label :vehicle %><br>
+            <%= f.file_field :carpic, class: "fileinput" %>
+          </td>
+          <td>
+            <%= f.label :reg %><br>
+            <%= f.text_field :reg, class: "textfield" %>
+          </td>
+        </tr>
+      <% end %>
+
     </table>
 
   <div class="actions">

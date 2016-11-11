@@ -2,10 +2,10 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: "users/registrations" }
 
-  resources :drivers
   resource :profile
+  resources :profiles
 
-  get '/edit' => 'drivers#editall'
+  get '/driver_page' => 'profiles#driver_page'
 
   root 'dashboard#show'
 

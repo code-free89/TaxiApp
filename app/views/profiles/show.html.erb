@@ -3,7 +3,9 @@
   <h1><%= @profile && @profile.fname ? @profile.fname : "My profile" %>
       <% if current_user.admin? %>  (Admin) <% end %>
   </h1>
-
+  <h2>
+    <%= @profile.role.camelize %>
+  </h2>
 
   <table>
     <tr>
@@ -29,6 +31,10 @@
     <tr>
       <td><%= image_tag(@profile.avatar) %></td>
       <td><%= @profile.county %></td>
+    </tr>
+    <tr>
+      <td><%= image_tag(@profile.carpic) %></td>
+      <td><%= @profile.reg %></td>
     </tr>
   </table>
 

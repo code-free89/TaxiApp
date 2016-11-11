@@ -7,4 +7,7 @@ class User < ApplicationRecord
 
   has_one :profile
   accepts_nested_attributes_for :profile
+
+  # Roles provided by enum
+  enum role: [ :customer, :driver, :dispatcher, :admin ]
 end

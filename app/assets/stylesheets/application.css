@@ -81,6 +81,11 @@ a {
     text-decoration: none;
 }
 
+table {
+    background-color: #ECECEC;
+    margin-bottom:    20px;
+}
+
 label {
     display: inline-block;
     margin-top: 10px;
@@ -93,7 +98,7 @@ label {
     border-style:     solid;
     border-width:     1px;
     border-radius:    15px;
-    padding:          5px;
+    padding:          5px 10px 5px 10px;
     font-size:        16px;
     min-width:        60px;
 }
@@ -105,29 +110,36 @@ label {
     border-style:     solid;
     border-width:     1px;
     border-radius:    15px;
-    padding:          5px;
+    padding:          5px 10px 5px 10px;
     font-size:        16px;
     min-width:        60px;
 }
 
 input {
-    background-color: #ECECEC;
     color:            #7f7f7f;
     border-color:     #e5e5e5;
     border-style:     solid;
     border-width:     1px;
-    border-radius:    15px;
-    padding:          5px;
+    padding:          5px 10px 5px 10px;
     font-size:        16px;
     min-width:        60px;
+    background-color: #ECECEC;
+
 }
 
 input[type="text"] {
-    font-size: 12px;
+    font-size:        12px;
+    background-color: white;
+}
+
+select {
+    font-size: 14px;
 }
 
 input[type="submit"] {
     cursor:           pointer;
+    border-radius:    15px;
+
 }
 
 input[type="file"] {
@@ -137,6 +149,10 @@ input[type="file"] {
 input:-webkit-autofill {
     -webkit-box-shadow:      0 0 0 50px white inset;
     -webkit-text-fill-color: darkgray;
+}
+
+img {
+    width: 160px;
 }
 
 .notice {
