@@ -1,0 +1,58 @@
+<%= form_for(job) do |f| %>
+
+  <table>
+    <tr>
+      <td>
+        <%= f.label "Driver" %><br>
+        <%= f.select(:driver_id, @drivers.collect{|p| [ p.fname, p.id ] }) %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label "Customer" %><br>
+        <%= f.select(:customer_id, @customers.collect{|p| [ p.fname, p.id ] }) %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label "Pickup time" %><br>
+        <%= f.date_select :pickup_time %>
+        <%= f.time_select :pickup_time %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label "Pickup Location" %><br>
+        <%= f.select(:location1_id, Address.all.collect{|a| [ a.title, a.id ] }) %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label "Drop location" %><br>
+        <%= f.select(:location2_id, Address.all.collect{|a| [ a.title, a.id ] }) %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label "Status" %><br>
+        <%= f.select :status, Job.statuses.keys.to_a %>
+      </td>
+    </tr>
+  </table>
+
+  <% if job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

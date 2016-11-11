@@ -1,0 +1,28 @@
+
+<div class="section">
+
+  <h2><%= @address.title %></h2>
+  <table>
+    <tr>
+      <td><%= @address.addr1 %></td>
+    </tr>
+    <tr>
+      <td><%= @address.addr2 %></td>
+    </tr>
+    <tr>
+      <td><%= @address.town %></td>
+    </tr>
+    <tr>
+      <td><%= @address.county %></td>
+    </tr>
+    <tr>
+      <td><%= @address.postcode %></td>
+    </tr>
+  </table>
+
+</div>
+<div class="section">
+<%= link_to 'Edit', edit_address_path(@address) %>
+  <br/>
+<%= link_to 'Back', addresses_path %>
+</div>

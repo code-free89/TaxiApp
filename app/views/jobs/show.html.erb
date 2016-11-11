@@ -1,0 +1,36 @@
+
+<div class="section">
+  <h1>Job for <%= @job.customer_id %></h1>
+
+  <table>
+      <tr>
+        <th>Id:</th><td><%= @job.id %></td>
+      </tr>
+      <tr>
+        <th>Driver:</th><td><%= Profile.find(@job.driver_id).fname %></td>
+      </tr>
+      <tr>
+        <th>Customer:</th><td><%= Profile.find(@job.customer_id).fname %></td>
+      </tr>
+      <tr>
+        <th>Time:</th><td><%= @job.pickup_time %></td>
+      </tr>
+      <tr>
+        <th>Pick-up location:</th><td><%= Address.find(@job.location1_id).title %></td>
+      </tr>
+      <tr>
+        <th>Drop-off location:</th><td><%= Address.find(@job.location2_id).title %></td>
+      </tr>
+      <tr>
+        <th>Status:</th><td><%= @job.status %></td>
+      </tr>
+  </table>
+
+
+</div>
+<div class="section">
+  <%= link_to 'Edit', edit_job_path %>
+  <p></p>
+  <%= link_to 'All jobs', jobs_path %>
+
+</div>

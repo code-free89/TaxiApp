@@ -1,0 +1,43 @@
+<div class="section">
+<h1>Jobs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Driver</th>
+      <th>Customer</th>
+      <th>Time</th>
+      <th>Pickup Address</th>
+      <th>Drop Address</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= job.id %></td>
+        <td><%= Profile.find(job.driver_id).fname %></td>
+        <td><%= Profile.find(job.customer_id).fname %></td>
+        <td><%= job.pickup_time %></td>
+        <td><%= Address.find(job.location1_id).title %></td>
+        <td><%= Address.find(job.location2_id).title %></td>
+
+      <td>
+          <%= job.status %>
+        </td>
+        <td>
+          <%= link_to "", edit_job_path(job.id), class: "fa fa-edit"%>
+          <%= link_to "", job_path(job.id), method: 'delete', class: "fa fa-trash"%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<div class="section">
+  <%= link_to 'New Job', new_job_path %>
+</div>

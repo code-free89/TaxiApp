@@ -10,36 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161111090115) do
+ActiveRecord::Schema.define(version: 20161111145459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "customers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "lname"
-    t.string   "fname"
+  create_table "addresses", force: :cascade do |t|
     t.string   "addr1"
     t.string   "addr2"
     t.string   "town"
-    t.string   "postcode"
     t.string   "county"
-    t.string   "avatar"
-    t.string   "phnum"
-    t.integer  "user_id"
-    t.index ["user_id"], name: "index_customers_on_user_id", using: :btree
-  end
-
-  create_table "drivers", force: :cascade do |t|
+    t.string   "postcode"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "fname"
-    t.string   "text"
-    t.string   "lname"
-    t.string   "reg"
-    t.string   "avatar"
-    t.string   "carpic"
+    t.string   "title"
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.integer  "driver_id"
+    t.integer  "customer_id"
+    t.datetime "pickup_time"
+    t.integer  "location1_id"
+    t.integer  "location2_id"
+    t.integer  "status"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "profiles", force: :cascade do |t|

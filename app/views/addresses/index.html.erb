@@ -1,0 +1,38 @@
+
+<div class="section">
+<h1>Addresses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>&nbsp</th>
+      <th>Address line 1</th>
+      <th>Address line 2</th>
+      <th>Town</th>
+      <th>County</th>
+      <th>Postcode</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @addresses.each do |address| %>
+      <tr>
+        <th><%= address.title %></th>
+        <td><%= address.addr1 %></td>
+        <td><%= address.addr2 %></td>
+        <td><%= address.town %></td>
+        <td><%= address.county %></td>
+        <td><%= address.postcode %></td>
+        <td><%= link_to "", edit_address_path(address.id), class: "fa fa-edit"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+
+<div class="section">
+  <%= link_to 'New Address', new_address_path %>
+</div>
+
