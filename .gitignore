@@ -21,10 +21,5 @@
 .byebug_history
 
 .DS_Store
-.idea
-log/
-test/
-tmp/
-uploads/
 
 

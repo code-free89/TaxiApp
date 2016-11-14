@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  driver_id: 1
+  customer_id: 1
+  pickup_time: 2016-11-11 13:50:45
+  location1_id: 1
+  location2_id: 1
+  status: 1
+
+two:
+  driver_id: 1
+  customer_id: 1
+  pickup_time: 2016-11-11 13:50:45
+  location1_id: 1
+  location2_id: 1
+  status: 1
