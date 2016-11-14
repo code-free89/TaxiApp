@@ -22,7 +22,6 @@
 
 .DS_Store
 .idea
-Rakefile
 log/
 test/
 tmp/
