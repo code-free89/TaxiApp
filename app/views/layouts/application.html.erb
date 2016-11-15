@@ -15,8 +15,10 @@
 
         <%if user_signed_in? %>
             <li><%= link_to 'Drivers', '/driver_page', class: "menu-item" %></li>
-            <li><%= link_to "Bookings ", jobs_path, class: "menu-item"%></li>
-            <li><%= link_to 'My Profile', profile_path(current_user.id), class: "menu-item" %></li>
+              <%if !current_user.customer? %>
+                <li><%= link_to "Bookings ", jobs_path, class: "menu-item"%></li>
+              <% end %>
+            <li><%= link_to 'My Profile', profile_path, class: "menu-item" %></li>
             <li><%= link_to "Log out " + current_user.email, destroy_user_session_path, method: 'delete', class: "menu-item"%></li>
         <%else %>
             <li><%= link_to "Log in", new_user_session_path, class: "menu-item" %><br /></li>
@@ -25,7 +27,7 @@
       </div>
 
       <div class="left-nav">
-        <%= link_to image_tag("taxi_icon_2.png", class: "img_small"), root_url %>
+        <%= link_to image_tag("taxi_icon_2.png", class: "img_small", alt: "home"), root_url %>
       </div>
     </div>
     <div class="notice">

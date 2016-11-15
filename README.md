@@ -10,7 +10,7 @@ Requirements (complete):
 * Have a 'dispatcher' role to create the jobs
 
 Requirements (ongoing / todo):
-* Allow taxi driver to notify customer when they have arrived
+*** Allow taxi driver to notify customer when they have arrived**
 * Show map of area and allow taxi driver to mark a pin where they are which the customer can see
 * Use http://www.gimbal.com/ as a beacon and geofence solution 
 
@@ -31,6 +31,10 @@ TODO
 * Customers should not be able to view jobs
 * Add Last names to profile references in job customer / driver dropdown
 * Make status editable from jobs index view / individual job view
+* Change tab order in profile edit, should do names before address bits
+* Don't include /public/uploads in git (!)
+* Is there a way to navigate from job -> customer so we don't need .find in the jobs index page?
+* Increase size of fa icons
 
 Done
 * Is user reference correct in the profiles_controller?

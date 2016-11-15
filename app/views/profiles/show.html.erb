@@ -32,10 +32,12 @@
       <td><%= image_tag(@profile.avatar) %></td>
       <td><%= @profile.county %></td>
     </tr>
-    <tr>
-      <td><%= image_tag(@profile.carpic) %></td>
-      <td><%= @profile.reg %></td>
-    </tr>
+    <% if @profile.driver? %>
+      <tr>
+        <td><%= image_tag(@profile.carpic) %></td>
+        <td><%= @profile.reg %></td>
+      </tr>
+    <% end %>
   </table>
 
 </div>

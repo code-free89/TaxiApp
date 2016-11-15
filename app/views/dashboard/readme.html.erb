@@ -1,0 +1,94 @@
+<html>
+
+<body>
+<h2>About this app</h2>
+
+The Taxi app was written with two goals in mind:
+<ul>
+  <li>Fullfil the taxi brief  </li>
+  <li>Learn ruby on rails</li>
+</ul>
+
+
+<p>
+Does it meet the brief? Yes, with caveats.
+</p>
+<p>
+Is it "finished"? I'm not sure anything is ever finished, but given the current Todo list, no!
+</p>
+
+<h3>Technologies used / learned</h3>
+<dl>
+  <dt>Ruby on rails 4</dt>
+  <dt>Carrierwave</dt>
+  <dd>Picture / document upload</dd>
+  <dt>Font awesome</dt>
+  <dd>Icons</dd>
+  <dt>Devise </dt>
+  <dd>User login management</dd>
+  <dt>Cancancan</dt>
+  <dd>User access constraints</dd>
+  <dt>Coffeescript</dt>
+  <dd>JS library, enables function when (for example) user picks a new select value</dd>
+</dl>
+
+<h3>Server requirements</h3>
+In order to deploy the app on a live server, I also needed the following:
+<dl>
+  <dt>Heroku</dt>
+  <dd>Demo server</dd>
+  <dt>Postgres</dt>
+  <dd>Heroku doesn't support sqlite</dd>
+  <dt>Listen</dt>
+  <dd>Heroku wouldn't work without it</dd>
+</dl>
+
+<h2>Core requirements from the brief</h2>
+
+<dl>
+  <dt>Allow users to sign up as a customer or a taxi driver</dt>
+  <dd><a href="http://taxi-matcher.herokuapp.com">Log in page</a></dd>
+  <dt>Allow taxi drivers to upload portraits and a picture of their car, car registration</dt>
+  <dd><a href="https://taxi-ror-app.herokuapp.com/profile">Profile page (select driver role)</a></dd>
+  <dt>Allow customers to upload a picture, and a mobile number</dt>
+  <dd><a href="https://taxi-ror-app.herokuapp.com/profile">Profile page</a></dd>
+  <dt>Taxi driver can create a new job for a customer</dt>
+  <dd><a href="https://taxi-ror-app.herokuapp.com/jobs">Jobs page</a></dd>
+  <dt>Allow taxi driver to notify customer when they have arrived</dt>
+  <dd><a href="https://taxi-ror-app.herokuapp.com/jobs">Select a job and move it to "arrived" state</a>,
+    this should trigger an email</dd>
+</dl>
+
+<h2>Nice to have</h2>
+<dl>
+  <dt>Have a 'dispatcher' role to create the jobs</dt>
+  <dd><a href="https://taxi-ror-app.herokuapp.com/profile">Profile page (select dispatcher role)</a></dd>
+  <dt>Show map of area and allow taxi driver to mark a pin where they are which the customer can see</dt>
+  <dd>Not completed</dd>
+  <dt>Use http://www.gimbal.com/ as a beacon and geofence solution</dt>
+  <dd>Not completed</dd>
+</body>
+
+<h2>Todo list</h2>
+  <ul>
+    <li>Validate email / phone number / postcode fields</li>
+    <li>Make some parameters mandatory</li>
+    <li>Validate that you can't create two profiles</li>
+    <li>Fix camel case in select</li>
+    <li>Remove unused role column from user</li>
+    <li>Should login go to profile page?</li>
+    <li>Make pages responsive / overflow, investigate </li>
+    <li>Only dispatcher and admin should be able to edit jobs</li>
+    <li>Taxi drivers should be able to edit their own jobs but no one else's</li>
+    <li>Customers should not be able to view jobs</li>
+    <li>Pickup and dropoff must be different addresses</li>
+    <li>Add Last names to profile references in job customer / driver dropdown</li>
+    <li>Make status editable from jobs index view / individual job view</li>
+    <li>Change keyboard tabbing order in profile edit, should do names before address bits</li>
+    <li>Is there a way to navigate from job -> customer so we don't need .find in the jobs index page?</li>
+    <li>Increase size of fa icons</li>
+    <li>Emails apparently sent, but don't actually arrive: investigate gmail smtp settings</li>
+    <li>Testing!</li>
+  </ul>
+
+</html>

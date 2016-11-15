@@ -2,12 +2,13 @@
 
 <%= form_for profile, url: profile_path do |f| %>
 
-      <div class="field">
-        <%= f.label :Account_role %><br />
-        <%= f.select :role, User.roles.keys.to_a %>
-      </div>
+ <div class="field">
+   <%= f.label :Account_role %><br />
+   <%= f.select :role, User.roles.keys.to_a %>
+ </div>
 
-      <table>
+ <table>
+   <tbody id="profile_table">
       <tr>
         <th>About me</th>
         <th>Address</th>
@@ -40,17 +41,20 @@
           <%= f.text_field :town %>
         </td>
       </tr>
-      <tr>
-        <td>&nbsp</td>
+      <tr  id="pic_row">
+        <td rowspan = "2">
+          <% if profile.avatar? %>
+              <%= image_tag(profile.avatar) %>
+          <% else %>
+              <%= f.label :picture %><br>
+          <% end %>
+          <%= f.file_field :avatar %>
+        </td>
         <td>
           <%= f.label :postcode %><br>
           <%= f.text_field :postcode %>
         </td>
       <tr>
-        <td>
-          <%= f.label :picture %><br>
-          <%= f.file_field :avatar %>
-        </td>
         <td>
           <%= f.label :county %><br>
           <%= f.text_field :county %>
@@ -75,8 +79,8 @@
           </td>
         </tr>
       <% end %>
-
-    </table>
+   </tbody>
+  </table>
 
   <div class="actions">
     <%= f.submit %>

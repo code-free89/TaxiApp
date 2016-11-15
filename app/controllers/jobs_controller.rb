@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
-  before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :set_job, only: [:show, :edit, :update, :destroy, :arrived, :enroute, :set_status]
+  before_action :set_children, only: [:show, :edit, :update, :arrived, :enroute, :set_status]
 
   # GET /jobs
   # GET /jobs.json
@@ -42,12 +43,66 @@ class JobsController < ApplicationController
     end
   end
 
+  # GET /jobs/1/arrived
+  def arrived
+    set_status
+  end
+
+  # PUT /jobs/1/set_status
+  def set_status
+    send_mail
+    puts "==========================="
+    puts "PARAMS: "
+    puts @job.id
+    puts job_params
+    # puts :status
+    puts "==========================="
+
+    respond_to do |format|
+      # if @job.update(params[:status])
+      if @job.update_attributes(job_params)
+        format.html { redirect_to @job, notice: 'Job was successfully updated with driver arrival.' }
+        format.json { render :show, status: :ok, location: @job }
+      else
+        format.html { redirect_to @job, notice: 'Failed to set job to arrived state.' }
+        format.json { render json: @job.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # GET /jobs/1/enroute
+  def enroute
+    send_mail
+
+    respond_to do |format|
+      if @job.update(id: @job.id, status:'driver_en_route' )
+        format.html { redirect_to @job, notice: 'Job was successfully updated with driver arrival.' }
+        format.json { render :show, status: :ok, location: @job }
+      else
+        format.html { redirect_to @job, notice: 'Failed to set job to arrived state.' }
+        format.json { render json: @job.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # PATCH/PUT /jobs/1
   # PATCH/PUT /jobs/1.json
   def update
+    puts "==========================="
+    puts "PARAMS: "
+    puts @job.id
+    puts params[:status]
+    puts job_params
+    puts "==========================="
+
+
     respond_to do |format|
       if @job.update(job_params)
-        format.html { redirect_to @job, notice: 'Job was successfully updated.' }
+
+        if @job.status == 'arrived'
+          send_mail
+        end
+        format.html { redirect_to jobs_url, notice: 'Job successfully updated.' }
         format.json { render :show, status: :ok, location: @job }
       else
         format.html { render :edit }
@@ -66,10 +121,21 @@ class JobsController < ApplicationController
     end
   end
 
+  def send_mail
+    CustomerMailer.arrived_email(@driver, @customer).deliver
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_job
       @job = Job.find(params[:id])
+    end
+
+    def set_children
+      @driver = Profile.find(@job.driver_id)
+      @customer = Profile.find(@job.customer_id)
+      @location1 = Address.find(@job.location1_id)
+      @location2 = Address.find(@job.location2_id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

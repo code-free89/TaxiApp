@@ -22,4 +22,6 @@
 
 .DS_Store
 
+#Ignore uploads
+public/uploads
 
