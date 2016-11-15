@@ -18,25 +18,26 @@ TODO
 * Validate email / phone number / postcode fields
 * Make some parameters mandatory
 * Validate that you can't create two profiles!
-* Modify role enum to have default value 0
 * Fix driver edit so car pic shows immediately when dropdown is selected
 * Fix camel case in select 
-* Fix edit pages so that pics already loaded are visible
 * Remove unused role column from user
-* Remove numbers from profile URLs
 * Should login go to profile page?
 * Make pages responsive / overflow?
 * Only dispatcher and admin should be able to edit job
 * Taxi drivers should be able to edit their own job but no one else's
 * Customers should not be able to view jobs
 * Add Last names to profile references in job customer / driver dropdown
-* Make status editable from jobs index view / individual job view
 * Change tab order in profile edit, should do names before address bits
-* Don't include /public/uploads in git (!)
+* Don't include /public/uploads in git
 * Is there a way to navigate from job -> customer so we don't need .find in the jobs index page?
 * Increase size of fa icons
+* Testing!
 
-Done
+Done (previous TODOs)
 * Is user reference correct in the profiles_controller?
 * Logout stopped working!!
 * Switch to postgres for heroku
+* Modify role enum to have default value 0
+* Remove numbers from profile URLs
+* Fix edit pages so that pics already loaded are visible
+* Make status editable from jobs index view / individual job view
