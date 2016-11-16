@@ -43,8 +43,17 @@ gem 'cancancan'
 
 # ------Heroku needs this stuff --------
 ruby "2.3.1"
-gem 'listen', '~> 3.0.5'
+# gem 'listen', '~> 3.0.5'
 # --------------------------------------
+
+# ----------------------------------------
+# Needed for heroku + carrierwave + AWS S3
+# Not using: trying cloudinary instead
+# gem 'fog', '~> 1.0.0'
+# ---------------------------------------
+
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

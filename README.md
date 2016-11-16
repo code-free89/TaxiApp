@@ -10,7 +10,7 @@ Requirements (complete):
 * Have a 'dispatcher' role to create the jobs
 
 Requirements (ongoing / todo):
-*** Allow taxi driver to notify customer when they have arrived**
+* Allow taxi driver to notify customer when they have arrived
 * Show map of area and allow taxi driver to mark a pin where they are which the customer can see
 * Use http://www.gimbal.com/ as a beacon and geofence solution 
 
