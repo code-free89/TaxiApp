@@ -38,6 +38,7 @@ $(document).on "turbolinks:load", ->
 
         $car_field = $car_cell.children[1];
         $car_field.name = "profile[carpic]";
+        $car_field.id = "profile_carpic";
 
         # console.log($car_img.src);
 
