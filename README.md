@@ -25,12 +25,9 @@ TODO
 * Make pages responsive / overflow?
 * Only dispatcher and admin should be able to edit job
 * Taxi drivers should be able to edit their own job but no one else's
-* Customers should not be able to view jobs
 * Add Last names to profile references in job customer / driver dropdown
 * Change tab order in profile edit, should do names before address bits
 * Don't include /public/uploads in git
-* Is there a way to navigate from job -> customer so we don't need .find in the jobs index page?
-* Increase size of fa icons
 * Use variables for CSS colours and pixel sizes
 * Testing!
 
@@ -42,3 +39,6 @@ Done (previous TODOs)
 * Remove numbers from profile URLs
 * Fix edit pages so that pics already loaded are visible
 * Make status editable from jobs index view / individual job view
+* Customers should not be able to view jobs
+* Is there a way to navigate from job -> customer so we don't need .find in the jobs index page?
+* Increase size of fa icons
