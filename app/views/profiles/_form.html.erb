@@ -70,7 +70,11 @@
 
         <tr>
           <td>
-            <%= f.label :vehicle %><br>
+            <% if profile.carpic? %>
+              <%= image_tag(profile.carpic) %>
+            <% else %>
+              <%= f.label :vehicle %><br>
+            <% end %>
             <%= f.file_field :carpic, class: "fileinput" %>
           </td>
           <td>
