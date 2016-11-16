@@ -10,7 +10,7 @@
     </tr>
     <tr>
       <% @profiles.each do |profile| %>
-          <td><%= image_tag(profile.avatar) %></td>
+          <td><%= cl_image_tag(profile.avatar) %></td>
       <% end %>
     </tr>
     <tr>
@@ -20,7 +20,7 @@
     </tr>
     <tr>
       <% @profiles.each do |profile| %>
-          <td><%= image_tag(profile.carpic) %></td>
+          <td><%= cl_image_tag(profile.carpic) %></td>
       <% end %>
     </tr>
     <tr>

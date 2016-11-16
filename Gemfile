@@ -39,11 +39,11 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'pg'
 gem 'cancancan'
+gem 'cloudinary'
 # =======================================
 
 # ------Heroku needs this stuff --------
 ruby "2.3.1"
-# gem 'listen', '~> 3.0.5'
 # --------------------------------------
 
 # ----------------------------------------

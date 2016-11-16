@@ -11,14 +11,14 @@
         <tr>
           <% @profiles.each do |profile| %>
               <% if profile.driver? %>
-                <td><%= image_tag(profile.avatar) %></td>
+                <td><%= cl_image_tag(profile.avatar) %></td>
               <% end %>
           <% end %>
         </tr>
         <tr>
           <% @profiles.each do |profile| %>
               <% if profile.driver? %>
-                <td><%= image_tag(profile.carpic) %></td>
+                <td><%= cl_image_tag(profile.carpic) %></td>
               <% end %>
           <% end %>
         </tr>

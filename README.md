@@ -31,6 +31,7 @@ TODO
 * Don't include /public/uploads in git
 * Is there a way to navigate from job -> customer so we don't need .find in the jobs index page?
 * Increase size of fa icons
+* Use variables for CSS colours and pixel sizes
 * Testing!
 
 Done (previous TODOs)

@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dcvfmf3kp
+  api_key: '442194168381334'
+  api_secret: QQO7lpghryaJUuYkGH7j3-IV96g
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dcvfmf3kp
+  api_key: '442194168381334'
+  api_secret: QQO7lpghryaJUuYkGH7j3-IV96g
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dcvfmf3kp
+  api_key: '442194168381334'
+  api_secret: QQO7lpghryaJUuYkGH7j3-IV96g
+  enhance_image_tag: true
+  static_image_support: false

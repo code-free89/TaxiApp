@@ -44,7 +44,7 @@
       <tr  id="pic_row">
         <td rowspan = "2">
           <% if profile.avatar? %>
-              <%= image_tag(profile.avatar) %>
+              <%= cl_image_tag(profile.avatar) %>
           <% else %>
               <%= f.label :picture %><br>
           <% end %>
@@ -71,7 +71,7 @@
         <tr>
           <td>
             <% if profile.carpic? %>
-              <%= image_tag(profile.carpic) %>
+              <%= cl_image_tag(profile.carpic) %>
             <% else %>
               <%= f.label :vehicle %><br>
             <% end %>
