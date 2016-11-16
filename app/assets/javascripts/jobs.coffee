@@ -3,10 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on "turbolinks:load", ->
   # console.log("Jobs page loaded");
-  # job_status = document.getElementById("job_status");
-  job_status_set = document.getElementsByTagName("select");
+  job_status_set = document.getElementsByName("job[status]");
 
-  console.log(job_status_set.length + " selects found");
+  # console.log(job_status_set.length + " selects found");
 
   for job_status in job_status_set
     do ->
@@ -15,7 +14,7 @@ $(document).on "turbolinks:load", ->
 
         formName = "edit_job_" + this.id;
         form = document.getElementById(formName);
-        # console.log(form);
+        console.log("Updating form values in db");
         form.submit();
 
 

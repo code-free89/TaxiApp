@@ -9,19 +9,22 @@ $(document).on "turbolinks:load", ->
     console.log("Selected " + profile_role.value);
 
     if profile_role.value == 'driver'
+      console.log("I'm a driver");
       $driver_row = $('#car1');
-      if ($driver_row[0])
-        # Do nothing, driver visual row already exists
-        # TODO do we need hide and show?
-        console.log("Found ");
-        console.log($driver_row[0]);
+      if $driver_row[0]
+        # console.log($driver_row[0]);
+        # Hide the rows for the driver if they already exist
         $car1 = $('#car1');
         $car1.show();
         $car2 = $('#car2');
         $car1.show();
       else
+        console.log("Creating car details rows");
+        # -------------------------------------------------
+        # Create the picture and vehicle registration row
+        # and cells
+        # -------------------------------------------------
         $picture_row = $('#pic_row');
-        # console.log($picture_row);
         $driver_row = $picture_row.clone();
 
         $driver_html = $driver_row[0];
@@ -32,12 +35,11 @@ $(document).on "turbolinks:load", ->
 
         $car_cell = $driver_html.children[0];
         $car_img = $car_cell.children[0];
-        console.log($car_img);
 
         $car_field = $car_cell.children[1];
         $car_field.name = "profile[carpic]";
 
-        console.log($car_img.src);
+        # console.log($car_img.src);
 
         # TODO these will be blank if you have previously loaded a car image
         $car_img.src = "";
@@ -49,13 +51,24 @@ $(document).on "turbolinks:load", ->
         $reg_field = $reg_cell.children[2];
         $reg_field.name = "profile[reg]";
 
-        $profile_table = $('#profile_table');
+        # -------------------------------------------------
+        # Create the title row and cells
+        # -------------------------------------------------
 
         $car_title = '<tr id="car1"><th colspan="2">Vehicle details</td></tr>'
+
+        # -------------------------------------------------
+        # Load the table and append the new rows
+        # -------------------------------------------------
+
+        $profile_table = $('#profile_table');
         $profile_table.append($car_title);
         $profile_table.append($driver_row);
+
       # END
     else
+      # If we've changed from driver to something else and the rows exist,
+      # hide them
       $profile_table = $('#profile_table');
       $car1 = $('#car1');
       $car1.hide();
