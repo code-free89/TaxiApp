@@ -1,25 +1,25 @@
 
 <div class="section">
-  <h1>Pick up customer <%= @customer.fname %></h1>
+  <h1>Job for customer <%= @job.customer.fname %></h1>
 
   <table>
       <tr>
         <th>Id:</th><td><%= @job.id %></td>
       </tr>
       <tr>
-        <th>Driver:</th><td><%= @driver.fname %> <%= @driver.lname %></td>
+        <th>Driver:</th><td><%= @job.driver.fname %> <%= @job.driver.lname %></td>
       </tr>
       <tr>
-        <th>Customer:</th><td><%= @customer.fname %> <%= @customer.lname %></td>
+        <th>Customer:</th><td><%= @job.customer.fname %> <%= @job.customer.lname %></td>
       </tr>
       <tr>
         <th>Time:</th><td><%= @job.pickup_time %></td>
       </tr>
       <tr>
-        <th>Pick-up location:</th><td><%= Address.find(@job.location1_id).title %></td>
+        <th>Pick-up location:</th><td><%= @job.location1.title %></td>
       </tr>
       <tr>
-        <th>Drop-off location:</th><td><%= Address.find(@job.location2_id).title %></td>
+        <th>Drop-off location:</th><td><%= @job.location2.title %></td>
       </tr>
         <tr>
         <th>Status:</th>

@@ -2,6 +2,8 @@ class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy, :arrived, :enroute, :set_status]
   before_action :set_children, only: [:show, :edit, :update, :arrived, :enroute, :set_status]
 
+  load_and_authorize_resource
+
   # GET /jobs
   # GET /jobs.json
   def index

@@ -18,18 +18,19 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= link_to job.id, job_path(job.id) %></td>
-        <td><%= link_to Profile.find(job.driver_id).fname, job_path(job.id) %></td>
-        <td><%= link_to Profile.find(job.customer_id).fname, job_path(job.id) %></td>
-        <td><%= job.pickup_time %></td>
-        <td><%= Address.find(job.location1_id).title %></td>
-        <td><%= Address.find(job.location2_id).title %></td>
+        <td><%= job.id %></td>
+        <td><%= job.driver.fname %></td>
+        <td><%= job.customer.fname %></td>
+        <td><%= job.pickup_time.strftime("%d %h %H:%M") %></td>
+        <td><%= job.location1.title %></td>
+        <td><%= job.location2.title %></td>
         <td>
           <%= form_for(job) do |f| %>
             <%= f.select :status, Job.statuses.keys.to_a, {}, id: job.id %>
           <% end %>
         </td>
-        <td>
+        <td class="widen">
+          <%= link_to "", job_path(job.id), class: "fa fa-eye"%>
           <%= link_to "", edit_job_path(job.id), class: "fa fa-pencil"%>
           <%= link_to "", job_path(job.id), method: 'delete', class: "fa fa-trash"%>
         </td>
