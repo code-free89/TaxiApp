@@ -32,7 +32,7 @@ Rails.application.configure do
       port:                 587,
       domain:               'gmail.com',
       user_name:            'segglestn@gmail.com',
-      password:             'rub8isH2',
+      password:             'foobar',
       authentication:       :login,
       enable_starttls_auto: true
   }
@@ -59,7 +59,8 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
-  config.asset_host = "http://res.cloudinary.com/dcvfmf3kp"
+  # Not needed if using cl_image_tag
+  # config.asset_host = "http://res.cloudinary.com/dcvfmf3kp"
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

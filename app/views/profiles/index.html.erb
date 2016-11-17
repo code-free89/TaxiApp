@@ -1,34 +1,16 @@
-<h1>All Profiles</h1>
+<h1 class="middle">All Profiles</h1>
 
-  <table>
+  <div class="container">
 
-    <tbody>
-    <tr>
+    <div class="row">
       <% @profiles.each do |profile| %>
-          <th><%= profile.role.camelize %></th>
+        <div class="col-xs-6 col-sm-4 col-md-3 tall">
+            <%= profile.role.camelize %><br/>
+            <%= cl_image_tag(profile.avatar) %><br/>
+            <%= profile.fname %> <%= profile.lname %><br/>
+            <%= cl_image_tag(profile.carpic) %><br/>
+            <%= profile.reg %>
+          </div>
       <% end %>
-    </tr>
-    <tr>
-      <% @profiles.each do |profile| %>
-          <td><%= cl_image_tag(profile.avatar) %></td>
-      <% end %>
-    </tr>
-    <tr>
-      <% @profiles.each do |profile| %>
-          <td class="middle"><%= profile.fname %> <%= profile.lname %></td>
-      <% end %>
-    </tr>
-    <tr>
-      <% @profiles.each do |profile| %>
-          <td><%= cl_image_tag(profile.carpic) %></td>
-      <% end %>
-    </tr>
-    <tr>
-      <% @profiles.each do |profile| %>
-          <td class="middle"><%= profile.reg %></td>
-      <% end %>
-    </tr>
-
-    </tbody>
-  </table>
-
+    </div>
+  </div>

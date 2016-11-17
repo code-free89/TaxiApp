@@ -7,7 +7,7 @@
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
-      <resolve-scope>postgres:public,</resolve-scope>
+      <resolve-scope>postgres:public</resolve-scope>
     </data-source>
     <data-source name="Rails TaxiApp: development driver - identifier.sqlite" uuid="b1c4e046-ef35-4f25-adc1-93b637058c75">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />

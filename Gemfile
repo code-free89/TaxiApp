@@ -40,6 +40,7 @@ gem 'devise'
 gem 'pg'
 gem 'cancancan'
 gem 'cloudinary'
+gem 'bootstrap-sass'
 # =======================================
 
 # ------Heroku needs this stuff --------

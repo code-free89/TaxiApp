@@ -10,10 +10,13 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
- *= require font-awesome
+
  */
+
+@import "font-awesome";
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -49,7 +52,7 @@ body {
 
 .menu-list {
     list-style-type: none;
-    line-height: 30px;
+    line-height:     46px;
 }
 
 .left-nav {
@@ -69,7 +72,7 @@ body {
 .img_small {
     height:     48px;
     width:      auto;
-    padding:    5px;
+    margin:     5px;
 }
 
 .welcome {
@@ -94,7 +97,7 @@ a:visited {
     color:    darkblue;
 }
 
-table {
+/* table {
     background-color: #ECECEC;
     margin-bottom:    20px;
     min-width:        200px;
@@ -102,7 +105,7 @@ table {
 
 th {
     padding-left: 5px;
-}
+} */
 
 label {
     display: inline-block;
@@ -179,6 +182,18 @@ img {
     color:          white;
     text-align:     center;
     background-color: #474766;
+}
+
+.middle {
+  text-align: center;
+}
+
+.tall {
+  height:  330px;
+}
+
+.less-tall {
+  height: 150px;
 }
 
 .field {
