@@ -15,7 +15,7 @@
 
         <%if user_signed_in? %>
             <li><%= link_to 'Drivers', '/driver_page', class: "menu-item" %></li>
-              <%if !current_user.customer? %>
+              <%if current_user.profile.present? && !current_user.customer? %>
                 <li><%= link_to "Bookings ", jobs_path, class: "menu-item"%></li>
               <% end %>
             <li><%= link_to 'My Profile', profile_path, class: "menu-item" %></li>

@@ -28,6 +28,7 @@ TODO
 * Change tab order in profile edit, should do names before address bits
 * Don't include /public/uploads in git
 * Use variables for CSS colours and pixel sizes
+* Jobs / bookings page gives error if you have no profile
 * Testing!
 
 Done (previous TODOs)

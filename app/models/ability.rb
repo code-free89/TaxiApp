@@ -4,11 +4,14 @@ class Ability
   def initialize(user)
     return unless user
 
-    if user.profile.customer?
+    if user.profile && user.profile.customer?
       can :manage, [ Profile, Address ]
-    else
+    elsif user.profile
       can :manage, :all
+    else
+     can :manage, [ Profile, Address ]
     end
 
   end
 end
+

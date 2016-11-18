@@ -118,10 +118,15 @@ label {
     border-color:     #e5e5e5;
     border-style:     solid;
     border-width:     1px;
-    border-radius:    15px;
+    border-radius:    5px;
     padding:          5px 10px 5px 10px;
     font-size:        16px;
     min-width:        60px;
+}
+
+.link {
+  margin-top:       10px;
+  margin-bottom:    10px;
 }
 
 .link > a {
@@ -130,7 +135,7 @@ label {
     border-color:     #e5e5e5;
     border-style:     solid;
     border-width:     1px;
-    border-radius:    15px;
+    border-radius:    5px;
     padding:          5px 10px 5px 10px;
     font-size:        16px;
     min-width:        60px;
@@ -145,12 +150,14 @@ input {
     font-size:        16px;
     min-width:        60px;
     background-color: #ECECEC;
-
+    margin-top:       10px;
+    margin-bottom:    10px;
 }
 
 input[type="text"] {
     font-size:        12px;
     background-color: white;
+    border-radius:    5px;
 }
 
 select {
@@ -159,7 +166,7 @@ select {
 
 input[type="submit"] {
     cursor:           pointer;
-    border-radius:    15px;
+    border-radius:    5px;
 
 }
 
@@ -207,4 +214,9 @@ img {
 
 a:hover {
     background-color: inherit;
+}
+
+// Need to override the bootstrap alert settings
+.alert {
+  margin-bottom: 0px;
 }
