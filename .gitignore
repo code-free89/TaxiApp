@@ -25,3 +25,6 @@
 #Ignore uploads
 public/uploads
 
+# Don't commit smtp password
+config/initializers/env_vars.rb
+

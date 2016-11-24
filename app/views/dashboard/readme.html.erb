@@ -79,7 +79,6 @@ In order to deploy the app on a live server, I also needed the following:
     <li>Pickup and dropoff must be different addresses</li>
     <li>Add Last names to profile references in job customer / driver dropdown</li>
     <li>Change keyboard tabbing order in profile edit, should do names before address bits</li>
-    <li>Emails apparently sent, but don't actually arrive: investigate gmail smtp settings</li>
     <li>Add address option to "use customer address" </li>
     <li>Use variables for CSS colours and pixel sizes</li>
     <li>Testing!</li>
@@ -90,3 +89,9 @@ Source is available in <a href="https://github.com/egglestn/TaxiApp">github</a>
 </div>
 </body>
 
+<h2>Errors</h2>
+<h4>SMTP send failure</h4>
+535-5.7.8 Username and Password not accepted. Learn more at
+If you see this when you select <b>Driver arrived</b>, as well as the possibiity of incorrect credentials, it could
+mean that the account used for the gmail SMTP server is not allowing "less secure access". For more information, see:
+<a href="https://support.google.com/accounts/answer/6010255?hl=en">Google support</a>

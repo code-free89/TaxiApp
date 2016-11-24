@@ -43,3 +43,6 @@ Done (previous TODOs)
 * Increase size of fa icons
 * Make pages responsive / overflow
 * Jobs / bookings page gives error if you have no profile
+
+Error messages
+535-5.7.8 Username and Password not accepted. Learn more at

@@ -1,7 +1,7 @@
 <div class="section">
 <h1>Jobs</h1>
 
-<table>
+<table class="jobs">
   <thead>
     <tr>
       <th>Id</th>
@@ -29,7 +29,7 @@
             <%= f.select :status, Job.statuses.keys.to_a, {}, id: job.id %>
           <% end %>
         </td>
-        <td class="widen">
+        <td class="actions">
           <%= link_to "", job_path(job.id), class: "fa fa-eye"%>
           <%= link_to "", edit_job_path(job.id), class: "fa fa-pencil"%>
           <%= link_to "", job_path(job.id), method: 'delete', class: "fa fa-trash"%>

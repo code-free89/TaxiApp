@@ -14,6 +14,7 @@
  */
 
 @import "font-awesome";
+@import "jobs";
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -95,6 +96,10 @@ a {
 
 a:visited {
     color:    darkblue;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 /* table {

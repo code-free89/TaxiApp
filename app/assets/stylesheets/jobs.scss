@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .fa {
-  color:     #2E2F30;
+  color: #2E2F30;
 }
 
 .fa:visited {
@@ -11,9 +11,15 @@
 }
 
 .fa::before {
-  font-size: 16px;
+  font-size: 18px;
 }
 
-.widen {
-  width: 60px;
+.actions {
+  font-size: 22px;
+}
+
+.jobs {
+  th, td {
+    padding: 7px;
+  }
 }
