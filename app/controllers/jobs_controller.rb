@@ -52,15 +52,7 @@ class JobsController < ApplicationController
 
   # PUT /jobs/1/set_status
   def set_status
-    send_mail
-    puts "==========================="
-    puts "PARAMS: "
-    puts @job.id
-    puts job_params
-    # puts :status
-    puts "==========================="
-
-    respond_to do |format|
+     respond_to do |format|
       # if @job.update(params[:status])
       if @job.update_attributes(job_params)
         format.html { redirect_to @job, notice: 'Job was successfully updated with driver arrival.' }
@@ -90,14 +82,6 @@ class JobsController < ApplicationController
   # PATCH/PUT /jobs/1
   # PATCH/PUT /jobs/1.json
   def update
-    puts "==========================="
-    puts "PARAMS: "
-    puts @job.id
-    puts params[:status]
-    puts job_params
-    puts "==========================="
-
-
     respond_to do |format|
       if @job.update(job_params)
 
@@ -124,7 +108,13 @@ class JobsController < ApplicationController
   end
 
   def send_mail
-    CustomerMailer.arrived_email(@driver, @customer).deliver
+    # Removing: I have seen it work, but causes monstrous anguish in gmail security team
+    # in case I've been hacked
+    puts ""
+    puts "-------------------------------------------------------------------------"
+    puts "Email would be sent here, has been removed to prevent gmail heart attacks"
+    puts "-------------------------------------------------------------------------"
+    # CustomerMailer.arrived_email(@driver, @customer).deliver
   end
 
   private
